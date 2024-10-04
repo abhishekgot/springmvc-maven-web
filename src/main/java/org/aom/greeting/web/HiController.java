@@ -1,6 +1,7 @@
 package org.aom.greeting.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -23,5 +24,12 @@ public class HiController {
 	@ResponseBody
 	String adminEndPoint() {
 		return "hello everyone, this is admin page";
+	}
+	
+	@GetMapping("/testthymeleaf")
+	String testingThymeleaf(Model model) {
+		System.out.println("inside /testthymeleaf method");
+		model.addAttribute("message", "Thymeleaf rocks!!!");
+		return "thymeleaf_testpage";
 	}
 }
