@@ -32,4 +32,12 @@ public class HiController {
 		model.addAttribute("message", "Thymeleaf rocks!!!");
 		return "thymeleaf_testpage";
 	}
+	
+	// showing the user registration page via thymeleaf
+	@GetMapping("/register")
+	String registerNewUser() {
+		System.out.println("inside /register method");
+		return "user_registration";
+	}
+	
 }
