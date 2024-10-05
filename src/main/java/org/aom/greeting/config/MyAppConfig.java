@@ -82,6 +82,7 @@ public class MyAppConfig implements WebMvcConfigurer, ApplicationContextAware {
         System.out.println("inside thymeleaf view resolver");
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setOrder(0);
+        viewResolver.setExcludedViewNames(new String[] { "*.jsp" });
         return viewResolver;
     }
     
@@ -94,8 +95,9 @@ public class MyAppConfig implements WebMvcConfigurer, ApplicationContextAware {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		//resolver.setViewClass(JstlView.class);
 		resolver.setPrefix("/WEB-INF/views/");
-		resolver.setSuffix(".jsp");
+		//resolver.setSuffix(".jsp");
 		resolver.setOrder(1);
+		//resolver.setViewNames("*.jsp");
 		return resolver;
 	}
 }

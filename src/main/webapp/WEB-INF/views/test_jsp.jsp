@@ -5,8 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Test JSP Page</title>
+<style>
+      .blue {
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
+    </style>
 </head>
 <body>
-	<h1>Hello from the app!!! This is a JSP page: Can be removed later</h1>
+	<h1 class="blue">Hello from the app!!! This is a JSP page during development phase</h1>
 </body>
 </html>
