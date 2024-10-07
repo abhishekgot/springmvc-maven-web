@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Thymeleaf Test page</title>
+    <title>Registration Confirmation</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <!--    <h1>Welcome to Reader's Paradise Bookstore</h1>-->
-    <h1 th:text="${message}">Dummy Heading</h1>
-    <h2 th:text="${common_message}">
+    <h1 th:text="${common_message}">
       Common Message using @ModelAttribute method level annotation
+    </h1>
+    <!-- 	<span th:text="|Welcome to our application, ${user.name}!|">Dummy -->
+    <!-- 		span text</span> -->
+    <!-- Literal Substitution example -->
+    <h2
+      th:text="|Welcome to our application, ${user.name}, with email: ${user.email}!|"
+    >
+      Message To User
     </h2>
   </body>
 </html>

@@ -26,6 +26,8 @@ public class MyAppConfig implements WebMvcConfigurer, ApplicationContextAware {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/*.html").addResourceLocations("/WEB-INF/html/");
+        // the below line is added so that when html page is displayed, then the html page can access the css file in order to apply the styles
+        registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/");
     }
     
     @Override

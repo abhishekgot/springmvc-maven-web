@@ -1,8 +1,12 @@
 package org.aom.greeting.web;
 
+import org.aom.greeting.domain.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -47,4 +51,18 @@ public class HiController {
 		return "test_jsp.jsp";
 	}
 
+	// binding the form input values to the Java pojo User so that the form input data reaches the controller method
+	// Using @ModelAttribute in the method argument makes sure that the model named "user" will be available in the rendered confirmation page.
+	//@ResponseBody
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	String processRegistration(@ModelAttribute("user") final User userObj) {
+		System.out.println("inside /processRegistration method");
+		System.out.println(userObj);
+		return "user_registration_confirmation.html";
+	}
+	
+	@ModelAttribute
+	void addingCommonObjects(Model model) {
+		model.addAttribute("common_message", "Thymeleaf is amazing!");
+	}
 }

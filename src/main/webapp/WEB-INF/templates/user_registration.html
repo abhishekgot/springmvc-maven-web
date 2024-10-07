@@ -26,7 +26,8 @@
 			<div class="container-lg my-5">
 				<div class="row justify-content-center my-5">
 					<div class="col-lg-6">
-						<form action="" method="post">
+						<form action="#" th:action="@{/register}" th:object="${user}" method="post">
+<!-- 						<form action="" method="post"> -->
 							<!-- Email -->
 							<label for="email" class="form-label">Email address: </label>
 							<div class="input-group mb-4">
